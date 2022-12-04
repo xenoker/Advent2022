@@ -7,7 +7,7 @@ def rset(x):
 L = [tuple(map(rset,l.split(',')))for l in getlines(4)]
 
 def part1():
-    return sum(a.issubset(b)or b.issubset(a)for a,b in L)
+    return sum(a<=b or b<=a for a,b in L)
 
 def part2():
     return sum(bool(a&b)for a,b in L)
