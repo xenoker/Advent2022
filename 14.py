@@ -19,7 +19,6 @@ class Cave:
                 ppos = p
         self.VOID = max(p[1] for p in self.MAP.keys())
         self.rested = 0
-        self.FLOOR = self.VOID
     def dropsand(self, floor=False):
         p = INLET
         while True:
