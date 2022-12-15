@@ -1,3 +1,6 @@
+import os
+from sys import argv
+
 def get(i):
     with open(f'./inputs/{i}.txt') as f:
         return f.read()
@@ -7,6 +10,10 @@ def getlines(i, emptys=False):
 def getints(i):
     with open(f'./inputs/{i}.txt') as f:
         return [int(x) for x in f.read().split('\n') if x]
+
+try: name = os.path.basename(argv[0]).split('.')[0]
+except: pass
+else: L = getlines(name) #running 15.py gets the lines from /inputs/15.txt
 
 def look_4way(LL, x, y, m = 1000):
     left  = [ix for ix in LL[y][:x][::-1]][:m]
